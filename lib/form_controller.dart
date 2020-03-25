@@ -9,8 +9,12 @@ class FormController {
   // Callback function to give response of status of current request.
   final void Function(String) callback;
 
+  // Manual test
+  // https://script.google.com/macros/s/AKfycbzfZNQkeGxrBm-dO20VZOw1_9EAjjp-qmaykgxCkZLtu42Hlqg/exec?vehicle=Sales Van&mileage=1231230&fuelCost=19
+
   // Google App Script Web URL.
   static const String URL = "https://script.google.com/macros/s/AKfycbzfZNQkeGxrBm-dO20VZOw1_9EAjjp-qmaykgxCkZLtu42Hlqg/exec";
+  // static const String URL = "https://script.google.com/macros/s/AKfycbzfZNQkeGxrBm-dO20VZOw1_9EAjjp-qmaykgxCkZLtu42Hlqg/exec";
   // static const String URL = "https://script.google.com/macros/s/AKfycbyAaNh-1JK5pSrUnJ34Scp3889mTMuFI86DkDp42EkWiSOOycE/exec";
 
   // Success Status Message
@@ -22,8 +26,8 @@ class FormController {
   /// Async function which saves feedback, parses [feedbackForm] parameters
   /// and sends HTTP GET request on [URL]. On successful response, [callback] is called.
   void submitForm(FeedbackForm feedbackForm) async {
-    print("Testing");
-    print(feedbackForm.print());
+    // TODO remove
+    print(feedbackForm.printAsString());
     try {
       await http.get(
           URL + feedbackForm.toParams()

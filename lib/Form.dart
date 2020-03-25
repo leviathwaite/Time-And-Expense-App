@@ -6,14 +6,18 @@ class FeedbackForm {
   // vehicle, mileage, fuelCost
   FeedbackForm(this._vehicle, this._mileage, this._fuelCost);
 
-  String print()
+  String printAsString()
   {
     return _vehicle.toString() + " " + _mileage.toString() + " " + _fuelCost.toString();
   }
 
   // Method to make GET parameters.
-  String toParams() =>
-      "?vehicle=$_vehicle&mileage=$_mileage&fuelCost=$_fuelCost";
+  // String toParams() =>
+  String toParams() 
+  {
+    print("?vehicle=$_vehicle&mileage=$_mileage&fuelCost=$_fuelCost");
+    return "?vehicle=$_vehicle&mileage=$_mileage&fuelCost=$_fuelCost";
+  }
 }
 
 // vehicle slot
